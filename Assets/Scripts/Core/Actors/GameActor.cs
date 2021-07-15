@@ -37,6 +37,9 @@ namespace Coskunerov.Actors
             eventdriver?.RemoveMono(this);
             ActorOnDestroy();
         }
+
+        protected void Push(int eventID, params object[] data)=> eventdriver.PushEvent(eventID, data);
+        
         
         public virtual void ActorStart() { }
         public virtual void ActorAwake() { }

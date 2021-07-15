@@ -75,4 +75,11 @@ public class ObjectCamp : GameSingleActor<ObjectCamp>
         System.Action<Object> findedAction = pushActions.Find(x => x.Item1 == searchingType)?.Item2;
         findedAction?.Invoke(O);
     }
+
+    public void TakeAll(System.Type type)
+    {
+        System.Action<Object> findedAction = pushActions.Find(x => x.Item1 == type)?.Item2;
+        allFreeObjects.FindAll(x => x.GetType() == type).ForEach(x => findedAction?.Invoke(x));
+    }
+
 }
