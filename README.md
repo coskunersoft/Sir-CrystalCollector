@@ -1,3 +1,3 @@
 # Sir-CrystalCollector
 
-Oyunun APK Dosyası ektedir.
+Oyunun APK Dosyası proje içerisindedir.
