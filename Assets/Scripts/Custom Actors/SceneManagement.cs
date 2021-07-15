@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using Coskunerov.Actors;
 using Coskunerov.EventBehaviour;
 using Coskunerov.EventBehaviour.Attributes;
@@ -20,7 +21,7 @@ public class SceneManagement : GameSingleActor<SceneManagement>
     
     public void ReplaceLevel()
     {
-        ObjectCamp.Instance.TakeAll(typeof(Crystal));
+        FindObjectsOfType<Crystal>().ToList().ForEach(x => ObjectCamp.Instance.TakeObjecy(x));
         PlayerActor.Instance.transform.position = PlayerPoint.position;
         RefleshCrystal();
     }
